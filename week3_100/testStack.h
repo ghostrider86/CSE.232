@@ -70,6 +70,7 @@ public:
       // Delete
 
       /* place your pop unit tests here */;
+      test_pop();
 
       // Status
       test_size_empty();
@@ -1138,7 +1139,24 @@ public:
    /***************************************
     * POP
     ***************************************/
+    void test_pop()
+    {
+       // setup
+       custom::stack<Spy> s;
+       setupStandardFixture(s);
 
+       // exercise
+       s.pop();
+       // verify
+       if (s.container.size() == 3)
+       {
+         assertUnit(s.container[0] == Spy(49));
+         assertUnit(s.container[1] == Spy(67));
+         assertUnit(s.container[2] == Spy(89));
+       }
+       // teardown
+       teardownStandardFixture(s);
+    }
 
    
    /*************************************************************
