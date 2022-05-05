@@ -15,7 +15,7 @@
  *    This will contain the class definition of:
  *       stack             : similar to std::stack
  * Author
- *    Jacob Elzinga
+ *    Jacob Elzinga, Michael Jackson
  ************************************************************************/
 
 #pragma once
@@ -97,7 +97,7 @@ public:
    void pop() 
    { 
     if (!empty())
-        container.erase(container.begin() + (size() - 1));
+        container.erase(container.begin());
    }
 
    //
