@@ -1150,6 +1150,7 @@ public:
        // verify
        if (s.container.size() == 3)
        {
+         assertUnit(s.container.size() == 3);
          assertUnit(s.container[0] == Spy(49));
          assertUnit(s.container[1] == Spy(67));
          assertUnit(s.container[2] == Spy(89));
