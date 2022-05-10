@@ -14,7 +14,7 @@
  *        Node         : A class representing a Node
  *    Additionally, it will contain a few functions working on Node
  * Author
- *    <your names here>
+ *    Jacob Elzinga, Michael Jackson
  ************************************************************************/
 
 #pragma once
@@ -140,7 +140,9 @@ inline void assign(Node <T> * & pDestination, const Node <T> * pSource)
 template <class T>
 inline void swap(Node <T>* &pLHS, Node <T>* &pRHS)
 {
-   
+    Node <T>* test = std::move(pLHS);
+    pLHS = std::move(pRHS);
+    pRHS = std::move(test);
 }
 
 /***********************************************
@@ -153,8 +155,19 @@ inline void swap(Node <T>* &pLHS, Node <T>* &pRHS)
 template <class T>
 inline Node <T> * remove(const Node <T> * pRemove) 
 {
-   
-   return new Node<T>;
+    if (pRemove == nullptr)
+        return nullptr;
+   Node <T>* pReturn = nullptr;
+   if (pRemove->pNext != nullptr)
+       pReturn = pRemove->pNext;
+   else if (pRemove->pPrev != nullptr)
+       pReturn = pRemove->pPrev;
+   if (pRemove->pPrev != nullptr)
+      pRemove->pPrev->pNext = pRemove->pNext;
+   if (pRemove->pNext != nullptr)
+      pRemove->pNext->pPrev = pRemove->pPrev;
+   delete pRemove;
+   return pReturn;
 }
 
 
@@ -209,7 +222,9 @@ inline Node <T> * insert(Node <T> * pCurrent,
 template <class T>
 inline size_t size(const Node <T> * pHead)
 {
-   return 99;
+   if (pHead == nullptr)
+      return 0;
+   return size(pHead->pNext) + 1;
 }
 
 /***********************************************
@@ -223,6 +238,8 @@ inline size_t size(const Node <T> * pHead)
 template <class T>
 inline std::ostream & operator << (std::ostream & out, const Node <T> * pHead)
 {
+   for (Node <T>* p = pHead; p; p = p->pNext)
+      out.put(p->data);
    return out;
 }
 
@@ -236,7 +253,7 @@ inline std::ostream & operator << (std::ostream & out, const Node <T> * pHead)
 template <class T>
 inline void clear(Node <T> * & pHead)
 {
-   
+    Node <T>* p = pHead;
+    while (p)
+        p = remove(p);
 }
-
-
