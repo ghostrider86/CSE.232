@@ -1,0 +1,11 @@
+﻿  testList.cpp
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\testList.h(120,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\testList.h(121,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\testList.h(134,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\testList.h(135,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\testList.h(148,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\testList.h(149,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\testList.h(187,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\testList.h(188,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+D:\Spring Semester 2022\DesigningDataStructures\week5_100\list.h(208): warning C4172: returning address of local variable or temporary: foo
+  LabList.vcxproj -> D:\Spring Semester 2022\DesigningDataStructures\week5_100\x64\Debug\LabList.exe
